@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#1d78e1;
+}
+.box{
+    position:relative;
+    width:450px;
+    height:550px;
+    border-radius:30px;
+    background:#1d78e1;
+    padding:30px;
+    box-shadow:
+    25px 25px 75px rgba(0,0,0,0.25),
+    10px 10px 70px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(255,255,255,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+}
+h2{
+    text-align:center;
+    color:#fff;
+    margin-bottom:20px;
+    font-size:30px;
+}
+#inputBx{
+    width:100%;
+    padding:15px 20px;
+    border:none;
+    outline:none;
+    border-radius:30px;
+    font-size:18px;
+    box-shadow:
+    5px 5px 7px rgba(0,0,0,0.25),
+    inset 2px 2px 5px rgba(0,0,0,0.5),
+    inset -3px -3px 5px rgba(255,255,255,0.2);
+}
+#list{
+    margin-top:20px;
+    max-height:380px;
+    overflow-y:auto;
+}
+#list li{
+    list-style:none;
+    background:#fff;
+    color:#333;
+    padding:12px 15px;
+    margin:12px 0;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+#list li span{
+    flex:1;
+    font-size:17px;
+    word-break:break-word;
+}
+#list button{
+    border:none;
+    outline:none;
+    padding:7px 12px;
+    margin-left:8px;
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+    font-size:14px;
+    transition:.3s;
+}
+#list button:first-of-type{
+    background:#ffc107;
+}
+#list button:first-of-type:hover{
+    background:#e0a800;
+}
+#list button:last-of-type{
+    background:#dc3545;
+}
+#list button:last-of-type:hover{
+    background:#b02a37;
+}
+#list::-webkit-scrollbar{
+    width:6px;
+}
+#list::-webkit-scrollbar-thumb{
+    background:#fff;
+    border-radius:10px;
+}

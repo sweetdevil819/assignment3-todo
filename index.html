@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js"> </script>
+    <div class="container">
+        <div class="box">
+            <h2>To Do List</h2>
+            <input type="text" placeholder="Write here...." id="inputBx">
+            <ul id="list"></ul>
+        </div>
+    </div>
+    <script>
+let inputBx = document.querySelector("#inputBx");
+let list = document.querySelector("#list");
+let editItem = null;
+
+inputBx.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        if (this.value.trim() === "") return;
+
+        if (editItem !== null) {
+            editItem.querySelector("span").innerText = this.value;
+            editItem = null;
+        } else {
+            addItem(this.value);
+        }
+
+        this.value = "";
+    }
+});
+
+function addItem(text) {
+    let listItem = document.createElement("li");
+
+    listItem.innerHTML = `
+        <span>${text}</span>
+        <button onclick="updateItem(this)">Edit</button>
+        <button onclick="deleteItem(this)">Delete</button>
+    `;
+
+    list.appendChild(listItem);
+}
+
+function updateItem(button) {
+    editItem = button.parentElement;
+    inputBx.value = editItem.querySelector("span").innerText;
+    inputBx.focus();
+}
+
+function deleteItem(button) {
+    button.parentElement.remove();
+}
+</script>
+
+</body>
+</html>
